@@ -1,0 +1,52 @@
+function gerarSenha(){
+
+    const tamanho =
+    document.getElementById("tamanho").value;
+
+    const caracteres =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
+
+    let senha = "";
+
+    for(let i = 0; i < tamanho; i++){
+
+        let indice =
+        Math.floor(
+            Math.random() *
+            caracteres.length
+        );
+
+        senha += caracteres[indice];
+    }
+
+    document.getElementById("resultado")
+    .textContent = senha;
+
+    verificarForca(senha);
+}
+
+function verificarForca(senha){
+
+    let forca = 0;
+
+    if(senha.length >= 8) forca++;
+    if(/[A-Z]/.test(senha)) forca++;
+    if(/[0-9]/.test(senha)) forca++;
+    if(/[!@#$%&*]/.test(senha)) forca++;
+
+    let texto =
+    document.getElementById("forca");
+
+    if(forca <= 2){
+        texto.textContent = "🔴 Senha Fraca";
+        texto.style.color = "red";
+    }
+    else if(forca == 3){
+        texto.textContent = "🟡 Senha Média";
+        texto.style.color = "orange";
+    }
+    else{
+        texto.textContent = "🟢 Senha Forte";
+        texto.style.color = "green";
+    }
+}
