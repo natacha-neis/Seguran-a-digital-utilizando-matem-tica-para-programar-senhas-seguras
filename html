@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segurança Digital - Gerador de Senhas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🔐 Gerador de Senhas Seguras</h1>
+
+    <p>
+        Utilizando conceitos matemáticos de aleatoriedade e probabilidade
+        para criar senhas mais seguras.
+    </p>
+
+    <label>Tamanho da Senha:</label>
+    <input type="number" id="tamanho" min="4" max="30" value="12">
+
+    <button onclick="gerarSenha()">Gerar Senha</button>
+
+    <div class="senha-box">
+        <span id="resultado">Sua senha aparecerá aqui</span>
+    </div>
+
+    <div id="forca"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
